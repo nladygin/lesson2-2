@@ -49,7 +49,7 @@ public class TestLink {
         /* 2 the project */
         driver.switchTo().parentFrame();
         driver.switchTo().frame("mainframe").switchTo().frame("treeframe");
-        driver.findElements(By.xpath("//span[contains(text(),'" + projectName + "')]")).get(0).click();
+        driver.findElement(By.xpath("//span[contains(text(),'" + projectName + "')]")).click();
     }
 
 
@@ -76,7 +76,7 @@ public class TestLink {
         createTestCaseStep("Step #2 action", "Step #2 expected results");
         createTestCaseStep("Step #3 action", "Step #3 expected results");
 
-        
+
         /* create test case #2 */
         testCaseUID = randomUUID().toString();
 
