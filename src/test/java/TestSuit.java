@@ -19,8 +19,6 @@ public class TestSuit {
         return Arrays.asList(new Object[][] {
                 { "Test suit #1", "Test suit #1 description" },
                 { "Test suit #2", "Test suit #2 description" },
-                { "Test suit #3", "Test suit #3 description" },
-                { "Test suit #4", "Test suit #4 description" },
         });
     }
 
@@ -31,6 +29,7 @@ public class TestSuit {
     public void createTestSuit(){
 
         logger.info("createTestSuit: " + testSuitName);
+
         /* create new test suit */
         driver.switchTo().defaultContent();
         driver.switchTo().frame("mainframe").switchTo().frame("workframe");

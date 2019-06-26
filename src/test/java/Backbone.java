@@ -46,6 +46,7 @@ public class Backbone implements TestRule {
         driver.switchTo().defaultContent().switchTo().frame("titlebar");
         driver.findElement(By.cssSelector("a[accesskey=t]")).click();
         driver.switchTo().defaultContent().switchTo().frame("mainframe").switchTo().frame("treeframe");
+        driver.findElement(By.cssSelector("#expand_tree")).click();
         driver.findElement(By.xpath("//span[contains(text(),'" + projectName + "')]")).click();
     }
 
@@ -61,7 +62,7 @@ public class Backbone implements TestRule {
         this.logger = LogManager.getLogger();
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
-        this.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
 
