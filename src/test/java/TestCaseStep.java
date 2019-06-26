@@ -1,19 +1,13 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @RunWith(Parameterized.class)
 public class TestCaseStep {
@@ -51,7 +45,6 @@ public class TestCaseStep {
         driver.switchTo().defaultContent();
         driver.switchTo().frame("mainframe").switchTo().frame("treeframe");
         driver.findElement(By.xpath("//span[contains(text(),'" + testSuitName + "')]//following::span[contains(text(),'" + testCaseName + "')]")).click();
-
 
         /* create test case steps */
         driver.switchTo().defaultContent();
